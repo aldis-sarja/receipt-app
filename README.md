@@ -12,16 +12,6 @@ In `be-laravel` folder rename the file `.env.example` to `.env`, or make a copy:
 ```bash
 cp .env.example .env
 ```
-
-```bash
-php artisan key:generate
-cd ../fe-nuxt
-npm install
-npm run build
-```
-
-
-
 Configure your database:
 ```dosini
 DB_CONNECTION=<your-db-server>
@@ -32,14 +22,17 @@ DB_USERNAME=<your-db-user-name>
 DB_PASSWORD=<your-password>
 ```
 
-Now initialize database
+Now initialize database and populate with sample records:
 ```bash
 php artisan migrate
+php artisan db:seed
 ```
 
-Populate database with sample records:
 ```bash
-php artisan db:seed
+php artisan key:generate
+cd ../fe-nuxt
+npm install
+npm run build
 ```
 
 ## Usage
